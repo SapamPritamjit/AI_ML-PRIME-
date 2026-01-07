@@ -1,0 +1,8 @@
+String is a sequence of character
+
+String are immutable
+
+
+STRING FORMATTING
+1) format()
+2) f-strings
