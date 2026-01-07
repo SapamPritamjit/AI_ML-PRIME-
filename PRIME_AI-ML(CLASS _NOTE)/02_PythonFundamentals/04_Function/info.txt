@@ -1,0 +1,22 @@
+1. Function are block of statenment that perform a specific task
+
+2. We can reuse function 
+
+2 part of Function
+--> Function definition (core logic -- )
+--> Function call (invoke)
+
+
+2 type of parameter
+ 1) default parameter --> add when we write a function
+ 2) non-default parameter --> add when we call a function
+
+
+type of function
+ 1) Build in function --- print(), input(), etc.
+ 2) user defn function --- create by programmer
+
+Lambda Function --> it has only one expression
+
+use in high order function
+  here the parameter might be a function or a return value might be a function
