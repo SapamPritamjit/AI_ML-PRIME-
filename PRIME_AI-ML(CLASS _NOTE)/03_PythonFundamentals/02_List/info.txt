@@ -1,0 +1,15 @@
+List is a mutable sequence of values
+
+it is create using []
+
+the index start from 0
+
+it can store different data type
+
+we can perform slicing too just like string
+
+LIST METHODS
+1) l.append(val)    # add one element at the end
+2) l.insert(idx, val)    # insert element at index
+3) l.sort()    # arrange in increasing order
+4) l.reverse() # reverse order

@@ -1,0 +1,18 @@
+immutable sequence of values
+
+it is create using ()
+
+it have all the property as list do o, the difference is list is mutable and tupple is immutable
+
+we cannot create a single value tupple 
+
+if we want to create we need to put a comma at the end
+
+eg:- val = (1, ) 0r ("as", ) ---> correct
+ val = (1) --> wrong
+
+
+TUPLES METHOD
+
+1) t.index(val) # return 1st occurence index
+2) t.count(val) # counts total occurances
