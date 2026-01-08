@@ -1,0 +1,18 @@
+it is a collection of unique elements
+
+it is mutable but the elements must be immutable
+
+and it is unordered
+
+it is created using {}
+
+if we even add an element repetadely also it will not return the element repetadely
+it will only return one time and neglect the remaining simillar one
+
+METHODS:-
+1) s.add(val) # add a value
+2) s.remove(val) # remove a value
+3) s.clear() # empties the set
+4) s.pop() # remove a random value
+5) s.union(set2) # return new union
+6) s.intersection(set2) # return new intersection
