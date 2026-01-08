@@ -1,0 +1,27 @@
+it is creater using a {}
+
+it is muitable but they are unordered
+
+how it look ---> {key:value pairs, key:value pairs}
+
+key must be unique
+
+in dictioanry the key are  work as index
+
+we can print all the value pairs for a specific key using key
+
+
+METHOD :-
+
+d.keys() # return all keys
+d.values() # return all values
+d.items() # return(key, val)pairs
+d.get(val) # return val acc. to key
+d.update(new_item) # add new item to dictioanry
+
+
+
+info.get("name") --> correct
+info["name"] --> correct
+
+the difference is when we put an wrong key it return error for [] one but if we use .get it return none and execute the remaining code with any problem

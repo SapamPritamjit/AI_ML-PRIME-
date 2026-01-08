@@ -1,6 +1,0 @@
-it is creater using a {}
-
-how it look ---> {key:value pairs, key:value pairs}
-
-key must be unique
-
