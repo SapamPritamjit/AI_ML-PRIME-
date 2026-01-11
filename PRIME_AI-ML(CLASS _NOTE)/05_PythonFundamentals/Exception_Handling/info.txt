@@ -1,0 +1,11 @@
+try :- try contains the code that may cause an error.
+Purpose :- Test risky code without stopping the program.
+
+except :- except handles the error that occurs in the try block.
+Purpose :-Prevents program crash and shows a friendly message.
+
+else :- else runs only if no exception occurs in try.
+Purpose :-Keep success code separate from error handling.
+
+finally :-finally runs always, whether an error occurs or not.
+Purpose :-Used for cleanup actions (close file, release resources)
