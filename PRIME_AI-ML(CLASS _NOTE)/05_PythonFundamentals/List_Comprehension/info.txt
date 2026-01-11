@@ -1,0 +1,3 @@
+Definition :- List comprehension is a short and clean way to create a new list from an
+existing iterable (list, tuple, range, string) in one line.
+
