@@ -1,0 +1,10 @@
+class -> blueprint of an object (it is not a variable)
+it is created using class keyword
+
+object -> instance of class
+it can be created just like how we create a normal variable
+eg :- obj = class_name()
+
+
+Constructor or __init_method is used to initialize our object
+it call every time we call an objectvgt6

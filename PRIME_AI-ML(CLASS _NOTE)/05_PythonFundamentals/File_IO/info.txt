@@ -1,0 +1,27 @@
+r --> read mode
+w --> write mode
+when we use write mode it erast the entire previous data and rewrite thenew data
+
+readline --> read line by line
+
+There is a pointer type concept when we read write or making any changes in the code
+
+
+MODE :-
+r --> reading (Default)
+w --> writing truncates file first
+x --> create new and open for writting
+a --> write appends at end
+b --> binary mode
+t --> text mode (Default)
++ --> open disk file for update (r & w)
+r+ -> it write the text at the beginning(where the pointer start) and read the old data
+w+ -> it wipe out the old data and start writing a new data and it return blank because
+there is no old data remain to read
+a+ -> it write the data at the end(where the pointer end) and read the old data
+
+
+WITH key help to close the file automtically once the entire operation is done
+
+
+To delate a file we need to use a special module called os(operating system)
