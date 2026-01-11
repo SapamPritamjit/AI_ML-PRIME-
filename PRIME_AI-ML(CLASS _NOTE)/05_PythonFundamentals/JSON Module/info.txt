@@ -1,0 +1,19 @@
+JSON -> Javascript Object Notation
+
+
+# s represent a string here
+
+json.loads() -> Converts a JSON string → Python object
+Used when: JSON data comes as a string (API, response, text).
+
+json.dumps() -> Converts a Python object → JSON string
+Used when: Sending data to API or storing as text.
+
+
+
+json.load() -> Reads JSON data from a file → Python object
+Used when: JSON is stored in a file.
+
+
+json.dump() -> Writes a Python object → JSON file
+Used when: Saving data into a file.

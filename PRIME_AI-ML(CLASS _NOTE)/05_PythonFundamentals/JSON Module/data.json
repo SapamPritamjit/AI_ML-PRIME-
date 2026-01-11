@@ -1,0 +1,14 @@
+{
+    "name": "Sapam Pritamjit",
+    "course": "CSE",
+    "Year": "2nd year 3rd sem finish",
+    "address": {
+        "city": "Delhi",
+        "COuntry": "India"
+    },
+    "subject": [
+        "python",
+        "AI/ML"
+    ],
+    "age": 20
+}
