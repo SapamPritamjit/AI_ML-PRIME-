@@ -1,0 +1,10 @@
+it is design for fast numerical comnputing
+
+python-list --> flexible (it can store different data-type), slow
+
+np array --> homogenous(store same data type), fast, and it is optimized with c language
+
+np array is more optimized in memory storage as compare to python-list
+
+
+ndarray --> n dimensional array
