@@ -1,0 +1,3 @@
+MACHINE LEARNING :-
+    It is a part of computer science where we teach computers to learn from data find patterns &
+    make decision or predictions

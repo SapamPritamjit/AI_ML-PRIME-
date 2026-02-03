@@ -1,0 +1,8 @@
+Q. What is scikit-learn ?
+-> It is an open source ML Library that supports supervised & unsupervised learning.
+
+
+Why sklearn?
+-> well documented
+-> easy to learn
+-> work well with np & pd

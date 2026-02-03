@@ -1,0 +1,30 @@
+Supervised ML trains algorithms on labeled datasets, meaning each input has a known correct output,
+to learn patterns and predict outcomes for new data.
+
+
+Steps (ML):-
+1) Data preprocess + feature engineering
+2) Select Model
+3) Train / Test split
+4) Underfit / overfit
+
+Types of problems :-
+1) Regression :- Output is a continuous numerical value.
+2) Classification :- Output is a category or class 
+(Binary Classification -> it only have 2 possible class or category
+eg :-Spam / Not spam
+Yes / No
+Disease / No disease)
+
+
+(multi-class Classification -> it has more than two mutually exclusive classes, and each data point 
+belongs to exactly one class.
+eg :- Digit recognition (0–9)
+Animal type: cat / dog / horse
+Sentiment: positive / neutral / negative)
+
+
+(multi label classification -> one data point can belong to multiple classes at the same time.
+eg :- Email: spam + important
+Image: person + car + outdoor
+Movie: action + comedy)
