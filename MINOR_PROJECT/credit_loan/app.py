@@ -3,11 +3,15 @@ import pandas as pd
 import joblib
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
 # -----------------------------
 # Load Model
 # -----------------------------
-model = joblib.load("rf_model.pkl")
+BASE_DIR = os.path.dirname(__file__)
+model_path = os.path.join(BASE_DIR, "rf_model.pkl")
+
+model = joblib.load(model_path)
 
 # -----------------------------
 # Page Config

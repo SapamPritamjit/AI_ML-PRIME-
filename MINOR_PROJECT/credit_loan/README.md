@@ -114,7 +114,15 @@ The model highlights key decision factors such as:
 - Loan Amount  
 
 ---
+ How to Run
 
+### 1️⃣ Clone the repository
+
+### 2️⃣ pip install -r requirements.txt
+
+### 3️⃣ streamlit run app.py
+
+---
 ### 🔗 Live App
 
-👉 
+👉 https://creditloan-application01.streamlit.app/
