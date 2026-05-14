@@ -3,6 +3,7 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
 # ==========================================
 # PAGE CONFIG
@@ -18,7 +19,11 @@ st.set_page_config(
 # LOAD MODEL
 # ==========================================
 
-model = joblib.load("rf_model.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODEL_PATH = os.path.join(BASE_DIR, "rf_model.pkl")
+
+model = joblib.load(MODEL_PATH)
 
 # ==========================================
 # CUSTOM CSS
