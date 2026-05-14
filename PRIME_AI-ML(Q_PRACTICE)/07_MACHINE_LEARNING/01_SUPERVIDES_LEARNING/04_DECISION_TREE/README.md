@@ -46,3 +46,7 @@ The trained model is saved using:
 
 ```python
 joblib.dump(model, "rf_model.pkl")
+
+
+
+* Streamlit link : https://shopsmartecommerce12.streamlit.app/
