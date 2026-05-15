@@ -111,4 +111,4 @@ Developed by: Sapam Pritamjit
 
 This project is for educational and learning purposes.
 
-* Streamlit link : https://shopsmartecommerce12.streamlit.app/
+* Streamlit link : https://shopsmartecommerce.streamlit.app/
