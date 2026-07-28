@@ -1,0 +1,1424 @@
+/* ==========================================
+   GOOGLE FONT & RESET
+========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --secondary: #06B6D4;
+
+    --success: #10B981;
+    --warning: #F59E0B;
+    --danger: #EF4444;
+
+    --background: #F8FAFC;
+    --card: #FFFFFF;
+    --sidebar: #0F172A;
+
+    --text: #1E293B;
+    --text-light: #64748B;
+
+    --border: #E2E8F0;
+
+    --shadow:
+        0 10px 25px rgba(15,23,42,.08);
+
+    --radius: 18px;
+
+    --transition: .3s ease;
+}
+
+body {
+
+    font-family: "Poppins", sans-serif;
+    background: var(--background);
+    color: var(--text);
+}
+
+/* ==========================================
+   DASHBOARD LAYOUT
+========================================== */
+
+.dashboard{
+
+    display:grid;
+
+    grid-template-columns:260px 1fr;
+
+    min-height:100vh;
+
+}
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar{
+
+    background:var(--sidebar);
+
+    color:white;
+
+    padding:30px 20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+.logo i{
+
+    font-size:34px;
+
+    color:var(--secondary);
+
+}
+
+.logo h2{
+
+    font-size:22px;
+
+    font-weight:700;
+
+}
+
+.logo p{
+
+    color:#94A3B8;
+
+    font-size:13px;
+
+}
+
+.menu{
+
+    list-style:none;
+
+}
+
+.menu li{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:15px 18px;
+
+    border-radius:14px;
+
+    margin-bottom:12px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    color:#CBD5E1;
+
+}
+
+.menu li:hover{
+
+    background:#1E293B;
+
+    color:white;
+
+    transform:translateX(6px);
+
+}
+
+.menu li.active{
+
+    background:linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color:white;
+
+}
+
+.menu i{
+
+    width:22px;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content{
+
+    padding:35px;
+
+}
+
+/* ==========================================
+   TOP BAR
+========================================== */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar h1{
+
+    font-size:32px;
+
+    font-weight:700;
+
+}
+
+.topbar p{
+
+    color:var(--text-light);
+
+    margin-top:5px;
+
+}
+
+.profile{
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:14px 20px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.profile span{
+
+    font-size:14px;
+
+    color:var(--text-light);
+
+}
+
+.profile i{
+
+    font-size:34px;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   KPI CARDS
+========================================== */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:22px;
+
+    margin-bottom:35px;
+
+}
+
+.stat-card{
+
+    background:var(--card);
+
+    border-radius:var(--radius);
+
+    padding:25px;
+
+    box-shadow:var(--shadow);
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    transition:var(--transition);
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.stat-card h4{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+.stat-card h2{
+
+    font-size:28px;
+
+}
+
+.stat-card i{
+
+    font-size:34px;
+
+    color:var(--primary);
+
+}
+
+/* ==========================================
+   FORM GRID
+========================================== */
+
+.form-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+/* ==========================================
+   FORM CARDS
+========================================== */
+
+.card {
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    padding: 28px;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+
+    border: 1px solid transparent;
+}
+
+.card:hover {
+
+    transform: translateY(-6px);
+
+    border-color: var(--primary);
+
+    box-shadow: 0 16px 35px rgba(37, 99, 235, .12);
+}
+
+.card-title {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-bottom: 24px;
+}
+
+.card-title i {
+
+    font-size: 22px;
+
+    color: var(--primary);
+}
+
+.card-title h3 {
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+/* ==========================================
+   INPUT GROUP
+========================================== */
+
+.input-group {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-bottom: 18px;
+}
+
+.input-group:last-child {
+
+    margin-bottom: 0;
+}
+
+.input-group label {
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    color: var(--text);
+}
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 14px 16px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 12px;
+
+    outline: none;
+
+    font-size: 15px;
+
+    font-family: inherit;
+
+    transition: var(--transition);
+
+    background: #fff;
+}
+
+.input-group input::placeholder {
+
+    color: #94A3B8;
+}
+
+.input-group input:focus {
+
+    border-color: var(--primary);
+
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .10);
+}
+
+/* Remove number input arrows */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+input[type="number"] {
+    appearance: textfield;
+}
+
+/* ==========================================
+   BUTTON AREA
+========================================== */
+
+.button-area {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin: 40px 0;
+}
+
+#predictBtn {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 16px 36px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    color: white;
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition: var(--transition);
+
+    box-shadow: 0 12px 24px rgba(37, 99, 235, .25);
+}
+
+#predictBtn:hover {
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 18px 36px rgba(37, 99, 235, .35);
+}
+
+#predictBtn:active {
+
+    transform: scale(.98);
+}
+
+#predictBtn i {
+
+    font-size: 18px;
+}
+
+#predictBtn:disabled {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+/* ==========================================
+   RESULT SECTION
+========================================== */
+
+.result-section {
+
+    margin-top: 40px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 30px;
+
+}
+
+.hidden {
+
+    display: none;
+}
+
+/* ==========================================
+   RESULT HEADER
+========================================== */
+
+.result-header {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+.result-header h2 {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: var(--text);
+
+}
+
+.result-header i {
+
+    color: var(--primary);
+
+    margin-right: 10px;
+
+}
+
+/* ==========================================
+   SEGMENT CARD
+========================================== */
+
+.segment-card {
+
+    background: linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    color: white;
+
+    border-radius: var(--radius);
+
+    padding: 35px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.segment-card h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+.segment-card p {
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    opacity: .95;
+
+}
+
+/* ==========================================
+   METRIC GRID
+========================================== */
+
+.metrics-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+.metric-card {
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    box-shadow: var(--shadow);
+
+    transition: var(--transition);
+
+}
+
+.metric-card:hover {
+
+    transform: translateY(-5px);
+
+}
+
+.metric-card h4 {
+
+    color: var(--text-light);
+
+    font-size: 14px;
+
+    margin-bottom: 16px;
+
+}
+
+.metric-card h3 {
+
+    font-size: 28px;
+
+    color: var(--primary);
+
+}
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.progress {
+
+    width: 100%;
+
+    height: 10px;
+
+    background: #E2E8F0;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    margin-bottom: 10px;
+
+}
+
+.progress-fill {
+
+    width: 0;
+
+    height: 100%;
+
+    background: linear-gradient(
+        90deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    border-radius: inherit;
+
+    transition: width .8s ease;
+
+}
+
+.metric-card span {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: var(--text-light);
+
+}
+
+/* ==========================================
+   CHARTS
+========================================== */
+
+.charts-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+.chart-card {
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    padding: 25px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.chart-card h3 {
+
+    margin-bottom: 20px;
+
+    font-size: 20px;
+
+}
+
+.chart-card canvas {
+
+    width: 100% !important;
+
+    max-height: 320px;
+
+}
+
+/* ==========================================
+   RECOMMENDATION CARD
+========================================== */
+
+.recommendation-card {
+
+    background: var(--card);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    box-shadow: var(--shadow);
+
+}
+
+.recommendation-card h3 {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 20px;
+
+    font-size: 22px;
+
+}
+
+.recommendation-card i {
+
+    color: var(--warning);
+
+}
+
+#recommendations {
+
+    list-style: none;
+
+    display: grid;
+
+    gap: 14px;
+
+}
+
+#recommendations li {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 14px 18px;
+
+    border-radius: 12px;
+
+    background: #F8FAFC;
+
+    border-left: 5px solid var(--success);
+
+    transition: var(--transition);
+
+}
+
+#recommendations li:hover {
+
+    transform: translateX(6px);
+
+    background: #EEF6FF;
+
+}
+
+/* ==========================================
+   ANIMATIONS
+========================================== */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card,
+.stat-card,
+.metric-card,
+.chart-card,
+.segment-card,
+.recommendation-card {
+
+    animation: fadeIn .6s ease;
+}
+
+/* ==========================================
+   CUSTOM SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+
+    background: #F1F5F9;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #CBD5E1;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: var(--primary);
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1200px) {
+
+    .stats {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .metrics-grid {
+
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* ==========================================
+   SMALL TABLET
+========================================== */
+
+@media (max-width: 992px) {
+
+    .dashboard {
+
+        grid-template-columns: 90px 1fr;
+    }
+
+    .sidebar {
+
+        padding: 25px 12px;
+    }
+
+    .logo div {
+
+        display: none;
+    }
+
+    .menu li {
+
+        justify-content: center;
+    }
+
+    .menu li {
+
+        font-size: 0;
+    }
+
+    .menu li i {
+
+        font-size: 20px;
+        margin: 0;
+    }
+
+    .topbar {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+    }
+
+    .profile {
+
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+
+    .dashboard {
+
+        display: block;
+    }
+
+    .sidebar {
+
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 15px 20px;
+    }
+
+    .logo {
+
+        margin-bottom: 0;
+    }
+
+    .menu {
+
+        display: flex;
+
+        gap: 10px;
+    }
+
+    .menu li {
+
+        margin: 0;
+
+        padding: 10px;
+    }
+
+    .main-content {
+
+        padding: 20px;
+    }
+
+    .stats {
+
+        grid-template-columns: 1fr;
+    }
+
+    .form-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .metrics-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .charts-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .topbar h1 {
+
+        font-size: 26px;
+    }
+
+    .segment-card h2 {
+
+        font-size: 24px;
+    }
+
+}
+
+/* ==========================================
+   SMALL PHONES
+========================================== */
+
+@media (max-width: 480px) {
+
+    .main-content {
+
+        padding: 15px;
+    }
+
+    .card,
+    .stat-card,
+    .metric-card,
+    .chart-card,
+    .segment-card,
+    .recommendation-card {
+
+        padding: 18px;
+    }
+
+    #predictBtn {
+
+        width: 100%;
+
+        justify-content: center;
+    }
+
+    .profile {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
+
+/* ==========================================
+   FOOTER SPACING
+========================================== */
+
+body {
+
+    overflow-x: hidden;
+}
+
+canvas {
+
+    display: block;
+}
+
+/* ==========================================
+   SIDEBAR INFORMATION
+========================================== */
+
+.sidebar-info {
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 10px;
+
+}
+
+.info-card {
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    border-radius: 14px;
+
+    padding: 18px;
+
+}
+
+.info-card h4 {
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+
+    font-size: 16px;
+
+}
+
+.info-card p {
+
+    color: #CBD5E1;
+
+    margin: 8px 0;
+
+    font-size: 14px;
+
+}
+
+.pipeline {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+
+    color: #E2E8F0;
+
+    font-weight: 500;
+
+}
+
+.pipeline i {
+
+    color: var(--secondary);
+
+}
+
+#kpiStatus{
+
+    color: var(--success);
+
+}
+
+/* ==========================================
+   HERO PREDICTION CARD
+========================================== */
+
+.segment-card {
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.prediction-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 18px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,.18);
+
+    margin-bottom: 25px;
+
+    font-weight: 600;
+}
+
+.prediction-badge i {
+
+    color: #22C55E;
+}
+
+.segment-card h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+
+    line-height: 1.2;
+}
+
+.summary-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+
+    margin-top: 35px;
+}
+
+.summary-item {
+
+    background: rgba(255,255,255,.15);
+
+    border-radius: 15px;
+
+    padding: 18px;
+
+    text-align: center;
+}
+
+.summary-item h5 {
+
+    opacity: .8;
+
+    margin-bottom: 8px;
+
+    font-size: 13px;
+}
+
+.summary-item span {
+
+    font-size: 20px;
+
+    font-weight: 700;
+}
+
+/* ==========================================
+   MODERN METRIC CARDS
+========================================== */
+
+.metric-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-bottom:15px;
+
+}
+
+.metric-header i{
+
+    width:42px;
+
+    height:42px;
+
+    border-radius:12px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    background:#EEF4FF;
+
+    color:var(--primary);
+
+    font-size:18px;
+
+}
+
+.metric-card h2{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+    color:var(--text);
+
+}
+
+.metric-card small{
+
+    color:var(--text-light);
+
+    font-size:13px;
+
+}
+
+.metric-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.metric-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:linear-gradient(
+        var(--primary),
+        var(--secondary)
+    );
+
+}
+
+.label-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:8px;
+}
+
+.help-icon {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--primary);
+    font-size: 15px;
+}
+
+.tooltip {
+    position: absolute;
+    top: 28px;
+    right: 0;
+    width: 260px;
+    padding: 12px;
+    background: #1e293b;
+    color: white;
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.5;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.25s;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+.help-icon:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-banner{
+    display:flex;
+    align-items:flex-start;
+    gap:16px;
+    background:#EEF6FF;
+    border-left:5px solid var(--primary);
+    padding:20px;
+    border-radius:14px;
+    margin-bottom:30px;
+}
+
+.info-banner i{
+    color:var(--primary);
+    font-size:28px;
+}
+
+.info-banner h3{
+    margin-bottom:8px;
+}
+
+.info-banner p{
+    color:var(--text-light);
+    line-height:1.6;
+}
+
+.footer{
+    margin-top:50px;
+    padding:25px;
+    text-align:center;
+    color:var(--text-light);
+    border-top:1px solid var(--border);
+}
+
+.footer p{
+    margin:5px 0;
+}

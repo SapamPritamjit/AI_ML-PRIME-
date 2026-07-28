@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Credit Card Customer Segmentation</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <link rel="stylesheet" href="/static/style.css">
+
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <!-- ===========================
+            SIDEBAR
+        ============================ -->
+
+        <aside class="sidebar">
+
+            <div class="logo">
+
+                <i class="fa-solid fa-credit-card"></i>
+
+                <div>
+
+                    <h2>CC Segment</h2>
+
+                    <p>AI Dashboard</p>
+
+                </div>
+
+            </div>
+
+            <div class="sidebar-info">
+
+                <div class="info-card">
+
+                    <h4>
+                        <i class="fa-solid fa-robot"></i>
+                        Model
+                    </h4>
+
+                    <p>KMeans Clustering</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>
+                        <i class="fa-solid fa-gears"></i>
+                        ML Pipeline
+                    </h4>
+
+                    <div class="pipeline">
+
+                        <span>StandardScaler</span>
+
+                        <i class="fa-solid fa-arrow-down"></i>
+
+                        <span>PCA</span>
+
+                        <i class="fa-solid fa-arrow-down"></i>
+
+                        <span>KMeans</span>
+
+                    </div>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>
+                        <i class="fa-solid fa-chart-simple"></i>
+                        Project
+                    </h4>
+
+                    <p><strong>Clusters:</strong> 5</p>
+                    <p><strong>Features:</strong> 17</p>
+                    <p><strong>Output:</strong> Customer Segment</p>
+
+                </div>
+
+                <div class="info-card">
+
+                    <h4>
+                        <i class="fa-solid fa-circle-check"></i>
+                        System Status
+                    </h4>
+
+                    <p>🟢 Backend Online</p>
+                    <p>🟢 Model Loaded</p>
+                    <p>🟢 Prediction Ready</p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ===========================
+            MAIN CONTENT
+        ============================ -->
+
+        <main class="main-content">
+
+            <!-- HEADER -->
+
+            <header class="topbar">
+
+                <div>
+
+                    <h1>Credit Card Customer Segmentation</h1>
+
+                    <p>AI-Powered Customer Analytics Dashboard</p>
+
+                </div>
+
+                <div class="profile">
+
+                    <span>KMeans + PCA Model</span>
+
+                    <i class="fa-solid fa-user-circle"></i>
+
+                </div>
+
+            </header>
+
+
+            <!-- KPI CARDS -->
+
+            <section class="stats">
+
+                <div class="stat-card">
+
+                    <div>
+                        <h4>Customer Segment</h4>
+                        <h2 id="kpiSegment">Waiting...</h2>
+                    </div>
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div>
+                        <h4>Cluster</h4>
+                        <h2 id="kpiCluster">--</h2>
+                    </div>
+
+                    <i class="fa-solid fa-layer-group"></i>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div>
+                        <h4>Credit Utilization</h4>
+                        <h2 id="kpiUtilization">--%</h2>
+                    </div>
+
+                    <i class="fa-solid fa-credit-card"></i>
+
+                </div>
+
+                <div class="stat-card">
+
+                    <div>
+                        <h4>Status</h4>
+                        <h2 id="kpiStatus">Ready</h2>
+                    </div>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+            </section>
+
+
+            <!-- ===========================
+                FORM
+            ============================ -->
+            <div class="info-banner">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                    <h3>How to Use</h3>
+                    <p>
+                        Fill in the customer's credit card information. Hover over the
+                        <strong>?</strong> icon next to each field for explanations and examples.
+                        Then click <strong>Predict Customer Segment</strong> to generate the prediction.
+                    </p>
+                </div>
+            </div>
+
+            <form id="predictionForm">
+
+                <div class="form-grid">
+
+                    <!-- Account -->
+
+                    <div class="card">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-building-columns"></i>
+
+                            <h3>Account Information</h3>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="BALANCE">Balance</label>
+
+                                <span class="help-icon">
+                                    ⓘ
+                                    <span class="tooltip">
+                                        Current outstanding balance on the credit card.<br><br>
+                                        Example: <strong>1500.75</strong>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="BALANCE" step="any" placeholder="1000" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="BALANCE_FREQUENCY">Balance Frequency</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        How frequently the account balance is updated.<br><br>
+                                        Enter a value between <strong>0 and 1</strong>.<br>
+                                        <strong>Example:</strong> 1.0
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="BALANCE_FREQUENCY" min="0" max="1" step="0.01" placeholder="1.0"
+                                required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="CREDIT_LIMIT">Credit Limit</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Maximum credit available on the card.<br><br>
+                                        <strong>Example:</strong> 5000
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="CREDIT_LIMIT" step="any" placeholder="5000" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="MINIMUM_PAYMENTS">Minimum Payments</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Minimum payment amount required by the credit card issuer.<br><br>
+                                        <strong>Example:</strong> 300
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="MINIMUM_PAYMENTS" step="any" placeholder="300" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="TENURE">Tenure</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Number of months the customer has owned the credit card.<br><br>
+                                        <strong>Example:</strong> 12
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="TENURE" placeholder="12" required>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Purchase -->
+
+                    <div class="card">
+
+                        <div class="card-title">
+
+                            <i class="fa-solid fa-cart-shopping"></i>
+
+                            <h3>Purchase Information</h3>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="PURCHASES">Purchases</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Total amount spent using the credit card.<br><br>
+                                        <strong>Example:</strong> 2500
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="PURCHASES" step="any" placeholder="2500" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="ONEOFF_PURCHASES">One-Off Purchases</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Total amount spent on single purchases that are not paid in
+                                        installments.<br><br>
+                                        <strong>Example:</strong> 800
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="ONEOFF_PURCHASES" step="any" placeholder="800" required>
+
+                        </div>
+
+                        <div class="input-group">
+
+                            <div class="label-row">
+                                <label for="INSTALLMENTS_PURCHASES">Installment Purchases</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Total amount spent through installment payment plans.<br><br>
+                                        <strong>Example:</strong> 1200
+                                    </span>
+                                </span>
+                            </div>
+
+                            <input type="number" id="INSTALLMENTS_PURCHASES" step="any" placeholder="1200" required>
+
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="ONEOFF_PURCHASES_FREQUENCY">One-Off Purchase Frequency</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Frequency of one-off purchases.<br><br>
+                                        Enter a value between <strong>0 and 1</strong>.<br>
+                                        <strong>Example:</strong> 0.40
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="ONEOFF_PURCHASES_FREQUENCY" min="0" max="1" step="0.01"
+                                placeholder="0.40" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="PURCHASES_FREQUENCY">Purchase Frequency</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Overall purchase frequency.<br><br>
+                                        Enter a value between <strong>0 and 1</strong>.<br>
+                                        <strong>Example:</strong> 0.75
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="PURCHASES_FREQUENCY" min="0" max="1" step="0.01" placeholder="0.75"
+                                required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="PURCHASES_INSTALLMENTS_FREQUENCY">Installment Purchase Frequency</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Frequency of installment purchases.<br><br>
+                                        Enter a value between <strong>0 and 1</strong>.<br>
+                                        <strong>Example:</strong> 0.50
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="PURCHASES_INSTALLMENTS_FREQUENCY" min="0" max="1" step="0.01"
+                                placeholder="0.50" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="PURCHASES_TRX">Purchase Transactions</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Total number of purchase transactions made using the card.<br><br>
+                                        <strong>Example:</strong> 25
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="PURCHASES_TRX" placeholder="25" required>
+                        </div>
+
+                    </div>
+
+                    <!-- Cash Advance -->
+
+                    <div class="card">
+
+                        <div class="card-title">
+                            <i class="fa-solid fa-money-bill-wave"></i>
+                            <h3>Cash Advance</h3>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="CASH_ADVANCE">Cash Advance</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Total cash withdrawn using the credit card.<br><br>
+                                        <strong>Example:</strong> 500
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="CASH_ADVANCE" step="any" placeholder="500" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="CASH_ADVANCE_FREQUENCY">Cash Advance Frequency</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Frequency of cash advance usage.<br><br>
+                                        Enter a value between <strong>0 and 1</strong>.<br>
+                                        <strong>Example:</strong> 0.20
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="CASH_ADVANCE_FREQUENCY" min="0" max="1" step="0.01"
+                                placeholder="0.20" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="CASH_ADVANCE_TRX">Cash Advance Transactions</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Number of cash advance transactions.<br><br>
+                                        <strong>Example:</strong> 4
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="CASH_ADVANCE_TRX" placeholder="4" required>
+                        </div>
+
+                    </div>
+
+                    <!-- Payments -->
+
+                    <div class="card">
+
+                        <div class="card-title">
+                            <i class="fa-solid fa-wallet"></i>
+                            <h3>Payments</h3>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="PAYMENTS">Payments</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Total amount paid toward the credit card balance.<br><br>
+                                        <strong>Example:</strong> 2800
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="PAYMENTS" step="any" placeholder="2800" required>
+                        </div>
+
+                        <div class="input-group">
+                            <div class="label-row">
+                                <label for="PRC_FULL_PAYMENT">Full Payment Percentage</label>
+                                <span class="help-icon">
+                                    <i class="fa-solid fa-circle-question"></i>
+                                    <span class="tooltip">
+                                        Percentage of billing cycles where the full balance was paid.<br><br>
+                                        Enter a value between <strong>0 and 1</strong>.<br>
+                                        <strong>Example:</strong> 0.85
+                                    </span>
+                                </span>
+                            </div>
+                            <input type="number" id="PRC_FULL_PAYMENT" min="0" max="1" step="0.01" placeholder="0.85"
+                                required>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Predict Button -->
+
+                <div class="button-area">
+
+                    <button type="submit" id="predictBtn">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                        Predict Customer Segment
+
+                    </button>
+
+                </div>
+
+            </form>
+
+            <!-- Prediction Result -->
+
+            <section id="result" class="result-section hidden">
+
+                <div class="result-header">
+
+                    <h2>
+                        <i class="fa-solid fa-chart-pie"></i>
+                        Prediction Result
+                    </h2>
+
+                </div>
+
+                <div class="segment-card">
+
+                    <div class="prediction-badge">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        Prediction Completed
+
+                    </div>
+
+                    <h1 id="segmentName">
+
+                        Waiting for Prediction...
+
+                    </h1>
+
+                    <p id="segmentDescription">
+
+                        Submit customer information to generate an AI-powered customer segment.
+
+                    </p>
+
+                    <div class="summary-grid">
+
+                        <div class="summary-item">
+
+                            <h5>Cluster</h5>
+
+                            <span id="summaryCluster">--</span>
+
+                        </div>
+
+                        <div class="summary-item">
+
+                            <h5>Pipeline</h5>
+
+                            <span>Scaler → PCA → KMeans</span>
+
+                        </div>
+
+                        <div class="summary-item">
+
+                            <h5>Status</h5>
+
+                            <span id="summaryStatus">Waiting</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- KPI Metrics -->
+
+                <div class="metrics-grid">
+
+                    <div class="metric-card">
+
+                        <div class="metric-header">
+
+                            <i class="fa-solid fa-credit-card"></i>
+
+                            <h4>Credit Utilization</h4>
+
+                        </div>
+
+                        <h2 id="utilizationValue">0%</h2>
+
+                        <div class="progress">
+
+                            <div id="utilizationBar" class="progress-fill"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="metric-card">
+
+                        <div class="metric-header">
+
+                            <i class="fa-solid fa-money-bill-trend-up"></i>
+
+                            <h4>Payment Ratio</h4>
+
+                        </div>
+
+                        <h2 id="paymentValue">0%</h2>
+
+                        <div class="progress">
+
+                            <div id="paymentBar" class="progress-fill"></div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="metric-card">
+
+                        <div class="metric-header">
+
+                            <i class="fa-solid fa-wallet"></i>
+
+                            <h4>Remaining Credit</h4>
+
+                        </div>
+
+                        <h2 id="remainingCredit">$0</h2>
+
+                        <small>Available Credit</small>
+
+                    </div>
+
+                    <div class="metric-card">
+
+                        <div class="metric-header">
+
+                            <i class="fa-solid fa-cart-shopping"></i>
+
+                            <h4>Average Purchase</h4>
+
+                        </div>
+
+                        <h2 id="averagePurchase">$0</h2>
+
+                        <small>Average Transaction</small>
+
+                    </div>
+
+                </div>
+
+                <!-- Charts -->
+
+                <div class="charts-grid">
+
+                    <div class="chart-card">
+
+                        <h3>Customer Profile</h3>
+
+                        <canvas id="customerChart"></canvas>
+
+                    </div>
+
+                    <div class="chart-card">
+
+                        <h3>Financial Metrics</h3>
+
+                        <canvas id="metricChart"></canvas>
+
+                    </div>
+
+                </div>
+
+                <!-- Recommendations -->
+
+                <div class="recommendation-card">
+
+                    <h3>
+
+                        <i class="fa-solid fa-lightbulb"></i>
+
+                        AI Recommendations
+
+                    </h3>
+
+                    <ul id="recommendations">
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <!-- Chart.js -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- App -->
+
+    <script src="/static/script.js"></script>
+
+</body>
+
+</html>
+
+<footer class="footer">
+    <p><strong>Credit Card Customer Segmentation Dashboard</strong></p>
+    <p>FastAPI • StandardScaler • PCA • KMeans</p>
+    <p>Developed by Your Name © 2026</p>
+</footer>
